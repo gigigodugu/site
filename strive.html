@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigi Godugu</title>
+    <link rel="shortcut icon" href="media/lotus.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FBFAF2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 5%;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 2.3rem;
+            font-weight: 400;
+            /* letter-spacing: 1.5px; */
+            display: flex; /* Add this to enable flexbox alignment */
+            align-items: center; /* Add this to vertically center the logo with the text */
+            gap: 10px; /* Add space between the logo and the text */
+        }
+
+
+        .brand-logo {
+            height: 40px; /* Adjust size as needed */
+            width: auto;
+        }
+
+        .brand p {
+            margin: 4px 0 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #888;
+            letter-spacing: 0.5px;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            margin-left: 2rem;
+        }
+
+        .site-nav a:hover {
+            color: #666;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #c8dbe3, #b2d8a6, #ada6a3, #e82664);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Carousel */
+        .testimonials-section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            padding: 3rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-details {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            background: #f0f0f0;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #c8dbe3;
+            color: white;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #c8dbe3;
+            transform: scale(1.2);
+        }
+
+        /* SAT Scores Graph */
+        .graph-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            margin: 4rem 0;
+            border-radius: 20px;
+        }
+
+        .graph-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .booking-container {
+            background: linear-gradient(135deg, #c8dbe3, #b2d8a6);
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .booking-btn {
+            background: white;
+            color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .booking-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c8dbe3;
+            box-shadow: 0 0 10px rgba(200, 219, 227, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #c8dbe3, #b2d8a6);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .float-1 {
+            top: 15%;
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            background: #c8dbe3;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .float-2 {
+            top: 30%;
+            right: 15%;
+            width: 40px;
+            height: 40px;
+            background: #b2d8a6;
+            transform: rotate(45deg);
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .float-3 {
+            bottom: 20%;
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            background: #ada6a3;
+            border-radius: 20px;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .float-4 {
+            bottom: 40%;
+            right: 25%;
+            width: 50px;
+            height: 50px;
+            background: #e82664;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: float 7s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .site-nav a {
+                margin-left: 0;
+                margin-right: 2rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, #b2d8a6, #c8dbe3);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-element float-1"></div>
+    <div class="floating-element float-2"></div>
+    <div class="floating-element float-3"></div>
+    <div class="floating-element float-4"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="brand">
+            <h1>
+                Gigi Godugu
+            <a href="index.html">
+                <img src="media/lotus.png" alt="Gigi Godugu Logo" class="brand-logo">
+            </a>
+            </h1>
+            <p>Where strategy meets storytelling — elevating brands through insight & creativity</p>
+        </div>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>Transform Your SAT Scores</h1>
+            <p>Join hundreds of students who have achieved their dream scores through personalized, results-driven tutoring. Every session is tailored to your unique learning style and goals.</p>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="section-title">What Students Say</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-wrapper" id="carouselWrapper">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            "I went from a 1200 to a 1480 in just 3 months! The personalized approach and constant encouragement made all the difference. I couldn't have done it without this amazing tutoring."
+                        </div>
+                        <div class="testimonial-author">Sarah Chen</div>
+                        <div class="testimonial-details">280 point improvement • Now at Stanford University</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            "The math strategies I learned completely changed my approach to the SAT. My score jumped from 1150 to 1420, and I finally felt confident on test day."
+                        </div>
+                        <div class="testimonial-author">Marcus Johnson</div>
+                        <div class="testimonial-details">270 point improvement • Accepted to Georgia Tech</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            "I was struggling with the reading section until I found this tutoring. The techniques for tackling passages and managing time were game-changers. Scored a 1510!"
+                        </div>
+                        <div class="testimonial-author">Emily Rodriguez</div>
+                        <div class="testimonial-details">320 point improvement • Full scholarship recipient</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            "The writing section used to be my weakness, but now it's my strength! Went from 1180 to 1450 and got into my dream school. Thank you for believing in me!"
+                        </div>
+                        <div class="testimonial-author">David Park</div>
+                        <div class="testimonial-details">270 point improvement • Now at UC Berkeley</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-nav">
+                <button class="nav-btn" id="prevBtn">‹</button>
+                <button class="nav-btn" id="nextBtn">›</button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <!-- SAT Scores Graph Section -->
+        <section id="results" class="graph-section">
+            <h2 class="section-title">Proven Results</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+                Track the incredible progress of real students over their tutoring journey
+            </p>
+            
+            <div class="graph-container">
+                <canvas id="satChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="booking-section">
+            <div class="booking-container">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Book a personalized tutoring session and take the first step toward your dream score</p>
+                <button class="booking-btn" onclick="openCalendar()">Schedule Your Session</button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Have questions? I'm here to help you succeed.
+            </p>
+            
+            <div class="success-message" id="successMessage">
+                Thank you for your message! I'll get back to you within 24 hours.
+            </div>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="question">Your Question</label>
+                    <textarea id="question" name="question" placeholder="Tell me about your SAT goals, current score, timeline, or any specific questions you have..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Testimonials Carousel
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const carouselWrapper = document.getElementById('carouselWrapper');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateCarousel() {
+            carouselWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 5000);
+
+        // SAT Scores Chart
+        const ctx = document.getElementById('satChart').getContext('2d');
+        const satChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Initial', '1 Month', '2 Months', '3 Months', '4 Months', 'Final'],
+                datasets: [
+                    {
+                        label: 'Sarah C.',
+                        data: [1200, 1250, 1320, 1380, 1450, 1480],
+                        borderColor: '#c8dbe3',
+                        backgroundColor: 'rgba(200, 219, 227, 0.1)',
+                        tension: 0.4,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'Marcus J.',  
+                        data: [1150, 1200, 1280, 1340, 1390, 1420],
+                        borderColor: '#b2d8a6',
+                        backgroundColor: 'rgba(178, 216, 166, 0.1)',
+                        tension: 0.4,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'Emily R.',
+                        data: [1190, 1260, 1350, 1420, 1480, 1510],
+                        borderColor: '#ada6a3',
+                        backgroundColor: 'rgba(173, 166, 163, 0.1)',
+                        tension: 0.4,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'David P.',
+                        data: [1180, 1230, 1300, 1370, 1420, 1450],
+                        borderColor: '#e82664',
+                        backgroundColor: 'rgba(232, 38, 100, 0.1)',
+                        tension: 0.4,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 1100,
+                        max: 1600,
+                        title: {
+                            display: true,
+                            text: 'SAT Score',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time Period',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        mode: 'point',
+                        intersect: false,
+                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                        titleColor: '#333',
+                        bodyColor: '#666',
+                        borderColor: '#ddd',
+                        borderWidth: 1,
+                        cornerRadius: 8,
+                        displayColors: true
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                }
+            }
+        });
+
+        // Set chart height
+        document.getElementById('satChart').style.height = '400px';
+
+        // Calendar booking function
+        function openCalendar() {
+            // Replace with your actual Google Calendar booking link
+            const calendarURL = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2FER_VWt8SoQzZmrjALA-9zV0m6-AhS2CdA1LQdRqZpfLhshS1zFDTEqDuqXrfFl4tGSrCE_FP";
+            window.open(calendarURL, '_blank');
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const question = document.getElementById('question').value;
+            
+            // Create mailto link (you can replace this with your actual email service)
+            const subject = encodeURIComponent(`SAT Tutoring Inquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nQuestion:\n${question}`);
+            const mailtoLink = `mailto:gigi.godugu@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

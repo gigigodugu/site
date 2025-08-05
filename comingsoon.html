@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Gigi Godugu</title>
+    <!-- Link to the fonts used in your other pages -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /*
+         * This CSS is for the "Coming Soon" page, designed to fit the aesthetic
+         * of the provided mockup and the existing website.
+         */
+
+        /* Base styles from your existing site, updated for the coming soon page */
+        :root {
+            --primary-font: 'Libre Baskerville', serif;
+            --heading-font: 'Playfair Display', serif;
+            --text-color: #333;
+            --background-light: #FBFAF2; 
+            --accent-color: #F5CEDC; 
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: var(--primary-font);
+            color: white; /* Text color for the page */
+        }
+        
+        /* The main container for the coming soon page */
+        .coming-soon-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            
+            /* Placeholder for the background image from the mockup */
+            background-image: url(/media/comingsoon.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Opaque overlay to make the text readable over the background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(238, 217, 196, 0.20); /* EED9C4 with 75% opacity */
+            backdrop-filter: blur(5px); /* Add a subtle blur effect */
+            z-index: 1;
+        }
+        
+        /* The content (text and stars) sits on top of the overlay */
+        .content {
+            position: relative;
+            z-index: 2;
+            /* To center the logo and text together */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Styling for the main "Coming Soon" text */
+        .coming-soon-text {
+            font-family: var(--heading-font);
+            font-weight: 400;
+            font-size: clamp(3rem, 10vw, 6rem); /* Responsive font size */
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* A small star icon for aesthetic flair, like in the mockup */
+        .star {
+            font-size: 2rem;
+            position: absolute;
+            color: white; /* Solid white color */
+        }
+
+        .star-top-left {
+            top: 10%;
+            left: 10%;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .star-bottom-right {
+            bottom: 10%;
+            right: 10%;
+            animation: pulse 2.5s infinite ease-in-out reverse;
+        }
+
+        /* Pulse animation for the stars, without opacity changes */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* ---- CHANGED: Logo Link CSS ---- */
+        .logo-link {
+            /* Position is no longer fixed, it's part of the flow */
+            margin-top: 2rem; /* Add some space between the handle and the logo */
+            display: inline-block;
+        }
+
+        .logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="coming-soon-container">
+        <!-- The overlay makes the background image opaque -->
+        <div class="overlay"></div>
+
+        <!-- The content sits above the overlay -->
+        <div class="content">
+            <h1 class="coming-soon-text">COMING</h1>
+            <h1 class="coming-soon-text">SOON</h1>
+            
+            <!-- ---- ADDED: Logo link moved inside the content div ---- -->
+            <a href="index.html" class="logo-link">
+                <img src="media/lotus.png" alt="Homepage Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Star icons for decoration, positioned absolutely -->
+        <div class="star star-top-left">✨</div>
+        <div class="star star-bottom-right">✨</div>
+
+    </div>
+
+</body>
+</html>

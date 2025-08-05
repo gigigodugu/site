@@ -1,0 +1,744 @@
+/*
+ * Cleaned and Organized Global Stylesheet
+ *
+ * This file contains foundational styles, typography, and layout rules
+ * that are common across your website.
+ * Color Chance Count: 8
+ */
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+:root {
+    /* Fonts */
+    --font-header: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-secondary: 'Libre Baskerville', serif;
+    
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Colors */
+    --color-background: #F9f5ef;
+    --color-text-dark: #333;
+    --color-text-medium: #666;
+    --color-text-light: #888;
+    --color-brand-brown: #5D4037;
+    --color-brand-caramel: #F3EADF;
+    --color-white: #fff;
+    --color-footer-bg: #1a202c;
+
+    /* Spacing */
+    --spacing-1: 0.5rem;
+    --spacing-2: 1rem;
+    --spacing-3: 1.5rem;
+    --spacing-4: 2rem;
+    --spacing-5: 2.5rem;
+    
+    /* Box Shadow */
+    --box-shadow-light: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-dark);
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+}
+
+p {
+    font-family: var(--font-body);
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    font-weight: var(--font-weight-semibold);
+}
+
+.section-title {
+    text-align: center;
+    font-size: var(--spacing-5);
+    margin-bottom: var(--spacing-5);
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* ==========================================================================
+   Header and Navigation
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-5) 5%;
+}
+
+.brand h1 {
+  display: flex;
+  align-items: center; /* This vertically centers the logo and text */
+  gap: 10px; /* Adjust the space between the name and the logo */
+  margin: 0; /* Remove default h1 margin to prevent extra spacing */
+  line-height: 1; /* Reset line height for better alignment */
+}
+
+/* Ensure the logo's link and image don't have unexpected spacing */
+.brand h1 a {
+  display: flex; /* Helps align the image perfectly */
+}
+
+.brand-logo {
+  height: 40px; /* Adjust the height of the logo to match the text size */
+  width: auto;
+}
+
+.brand p {
+    margin: 4px 0 0;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-light);
+    color: var(--color-text-light);
+    letter-spacing: 0.5px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-regular);
+    transition: color 0.3s ease;
+    margin-left: var(--spacing-4);
+}
+
+.site-nav a:hover {
+    color: var(--color-text-medium);
+}
+
+/* ==========================================================================
+   Main Content Grid (e.g., for homepage)
+   ========================================================================== */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 5%;
+}
+
+.grid-link {
+    text-decoration: none;
+    display: block;
+}
+
+.grid-item {
+    width: 100%;
+    padding-top: 60%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s ease;
+}
+
+.grid-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: transparent;
+    font-family: var(--font-header);
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.4s ease;
+}
+
+.grid-link:hover .grid-item {
+    background-color: var(--color-brand-caramel);
+}
+
+.grid-link:hover .grid-item span {
+    color: var(--color-brand-brown);
+}
+
+/* Block Colors & Textures */
+.grid-link:hover .color-block-1,
+.grid-link:hover .color-block-3,
+.grid-link:hover .color-block-4,
+.grid-link:hover .color-block-5,
+.grid-link:hover .color-block-6 {
+    background-blend-mode: overlay;
+}
+
+
+/* This is the key part: applying the texture image to all color blocks */
+.color-block-1,
+.color-block-2,
+.color-block-3,
+.color-block-4,
+.color-block-5,
+.color-block-6 {
+    background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png');
+}
+.color-block-1 {
+    background-color: #6a6f4c;
+    /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
+    /* background-image: url('/1.jpg'); */
+
+}
+
+.color-block-2 {
+    background-color: #CBB89D;
+}
+
+.color-block-3 {
+    background-color: #EDE1d2;
+    /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
+}
+
+.color-block-4 {
+    background-color: #806044;
+    /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
+}
+
+.color-block-5 {
+    background-color: #5d2510;
+    /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
+}
+
+.color-block-6 {
+    background-color: #412f26;
+    /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
+}
+
+/* ==========================================================================
+   Parallax Sections
+   ========================================================================== */
+.parallax-section {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.parallax-1 {
+    background-image: url('/istockphoto-483120345-612x612.jpg');
+}
+
+.parallax-2 {
+    background-image: url('/istockphoto-483120345-612x612.jpg');
+}
+
+/* ==========================================================================
+   Portfolio Sections
+   ========================================================================== */
+.portfolio-section {
+    padding: var(--spacing-4) 9% var(--spacing-4);
+    max-width: none;
+    margin: 0 auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+}
+
+.portfolio-item {
+    background: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-thumbnail {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-thumbnail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Set the single tint color with 80% transparency */
+    background: rgba(253, 231, 237, 0.8);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-thumbnail::before {
+    opacity: 1;
+}
+
+.portfolio-content {
+    padding: var(--spacing-3);
+}
+
+.portfolio-title-item {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-1);
+    color: var(--color-text-dark);
+}
+
+.portfolio-description {
+    font-size: 0.85rem;
+    color: var(--color-text-medium);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.portfolio-hover-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: var(--spacing-2);
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--color-white);
+}
+
+.portfolio-item:hover .portfolio-hover-content {
+    opacity: 1;
+}
+
+.hover-title {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--spacing-2);
+    margin: 0 0 0.25rem;
+}
+
+.hover-caption {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-light);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Portfolio Filters
+   ========================================================================== */
+.portfolio-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-5);
+    gap: var(--spacing-1);
+    font-family: var(--font-header);
+}
+
+.portfolio-filters label {
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-medium);
+    color: #444;
+}
+
+.portfolio-filters select,
+.filter-select {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow-light);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-2) center;
+    background-size: 14px;
+    padding-right: var(--spacing-5);
+    cursor: pointer;
+}
+
+.portfolio-filters select:hover,
+.filter-select:hover {
+    border-color: #c9dfe5;
+}
+
+.portfolio-filters select:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: #7cc0db;
+    box-shadow: 0 0 0 3px rgba(160, 207, 214, 0.25);
+}
+
+/* ==========================================================================
+   PDF Popup Modal
+   ========================================================================== */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.pdf-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-container {
+    display: flex;
+    background: none;
+    border-radius: 0;
+    width: 95%;
+    height: 90%;
+    max-width: none;
+    max-height: 800px;
+    position: relative;
+    box-shadow: none;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.pdf-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.pdf-header:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-title {
+    display: none;
+}
+
+.pdf-viewer {
+    width: 70%;
+    height: 100%;
+    border: none;
+    background: white;
+    overflow-y: scroll;
+}
+
+/* After */
+.project-info {
+    width: 30%;
+    background-color: var(--sidebar-color, #FBE8D3); /* Use a default color that works with the text */
+    padding: 3rem;
+    color: var(--color-text-dark); /* Changed to dark text color for readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-left: 10px solid #fff; /* Added a white border to the left side */
+    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+.project-info-content {
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideInUp 0.5s ease-out forwards;
+}
+
+.project-info h3 {
+    font-family: var(--font-header);
+    font-size: var(--spacing-5);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-3);
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.project-details {
+    font-size: var(--spacing-2);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-4);
+    opacity: 0.9;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: var(--spacing-4);
+    align-items: center;
+}
+
+.tag {
+    background: #EFEBCE;
+    padding: 0.6rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-medium);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #3B2E2A;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-stats {
+    margin-top: auto;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+.scroll-in-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+.scroll-in-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-55%, -45%) rotate(5deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-white);
+    padding: var(--spacing-4) 0;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-2);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-1);
+    }
+    
+    .pdf-container {
+        flex-direction: column;
+        width: 98%;
+        height: 95%;
+    }
+
+    .pdf-viewer {
+        width: 100%;
+        height: 60%;
+    }
+
+    .project-info {
+        width: 100%;
+        height: 40%;
+        padding: var(--spacing-3);
+    }
+
+    .project-info h3 {
+        font-size: var(--spacing-3);
+    }
+}
+
+/* ==========================================================================
+   Portfolio Thumbnail Classes (keep these separate)
+   ========================================================================== */
+.thumb-1 { background-image: url('media/portfolio-thumbnails/Esperoni1.png');}
+.thumb-2 { background-image: url('media/portfolio-thumbnails/Esperoni2.png');}
+.thumb-3 { background-image: url('media/portfolio-thumbnails/Hilton1.2.png');}
+.thumb-4 { background-image: url('media/portfolio-thumbnails/Hilton2.png');}
+.thumb-5 { background-image: url('media/portfolio-thumbnails/Hilton3.png');}
+.thumb-6 { background-image: url('media/portfolio-thumbnails/Hilton4.2.jpg');}
+.thumb-7 { background-image: url('media/portfolio-thumbnails/Hilton5.2.jpg');}
+.thumb-8 { background-image: url('media/portfolio-thumbnails/LuxeLounge2.png');}
+.thumb-9 { background-image: url('media/portfolio-thumbnails/LuxeLounge3.2.png');}
+.thumb-10 { background-image: url('media/portfolio-thumbnails/Doritos.png');}
+.thumb-11 { background-image: url('media/portfolio-thumbnails/YogaFactory1.png');}
+.thumb-12 { background-image: url('media/portfolio-thumbnails/CustomerSegInBanking.jpg');}
+.thumb-13 { background-image: url('media/portfolio-thumbnails/Chegg.png');}
+.thumb-14 { background-image: url('media/portfolio-thumbnails/Dyson1.2.jpg');}
+.thumb-15 { background-image: url('media/portfolio-thumbnails/AE.png');}
+.thumb-16 { background-image: url('media/portfolio-thumbnails/PAHumanities1.2.jpg');}
+.thumb-17 { background-image: url('media/portfolio-thumbnails/PAHumanities2.2.jpg');}
+.thumb-18 { background-image: url('media/portfolio-thumbnails/PAHumanitiesAds.png');}
+.thumb-19 { background-image: url('media/portfolio-thumbnails/FinanceConcept1.2.jpg');}
+.thumb-20 { background-image: url('media/portfolio-thumbnails/F1.png');}
+.thumb-21 { background-image: url('media/portfolio-thumbnails/HBOMax1.2.jpg');}
+.thumb-22 { background-image: url('media/portfolio-thumbnails/InvestmentMVPBlueprint.jpg');}
+.thumb-23 { background-image: url('media/portfolio-thumbnails/StayAheadOfCurve1.2.jpg');}
+.thumb-24 { background-image: url('media/portfolio-thumbnails/Tiktok.png');}
+.thumb-25 { background-image: url('media/portfolio-thumbnails/NFLDraft1.2.jpg');}
+.thumb-26 { background-image: url('media/portfolio-thumbnails/NFLDraft2.png');}
+.thumb-27 { background-image: url('media/portfolio-thumbnails/NFLDraft3.2.jpg');}
+.thumb-28 { background-image: url('media/portfolio-thumbnails/EastLiberty.png');}
+.thumb-29 { background-image: url('media/portfolio-thumbnails/PHDC1.png');}
+.thumb-30 { background-image: url('media/portfolio-thumbnails/PHDC2.2.jpg');}
+.thumb-31 { background-image: url('media/portfolio-thumbnails/PHDCIncubator.png');}
+.thumb-32 { background-image: url('media/portfolio-thumbnails/Poptart2.2.jpg');}
+.thumb-33 { background-image: url('media/portfolio-thumbnails/Biotech3.png');}
+
+
+
+/* Add this code block to your style.css file */
+/* === Floating Polka Dots for Sidebar === */
+.floating-element {
+    position: absolute;
+    opacity: 0.2; /* Adjusted for a softer, more subtle effect */
+    pointer-events: none;
+    z-index: 1; /* Place it behind the text but above the background */
+    border-radius: 50%; /* Make them perfectly round */
+}
+
+.float-1 { top: 10%; left: 15%; width: 15px; height: 15px; animation: float 10s ease-in-out infinite; }
+.float-2 { top: 60%; right: 5%; width: 20px; height: 20px; animation: float 12s ease-in-out infinite reverse; }
+.float-3 { bottom: 20%; left: 30%; width: 18px; height: 18px; animation: float 14s ease-in-out infinite; }
+.float-4 { top: 40%; left: 60%; width: 22px; height: 22px; animation: float 11s ease-in-out infinite reverse; }
+.float-5 { bottom: 5%; right: 25%; width: 16px; height: 16px; animation: float 13s ease-in-out infinite; }
+.float-6 { top: 75%; left: 10%; width: 14px; height: 14px; animation: float 15s ease-in-out infinite reverse; }
+.float-7 { top: 5%; right: 70%; width: 24px; height: 24px; animation: float 16s ease-in-out infinite; }
+.float-8 { bottom: 35%; right: 15%; width: 17px; height: 17px; animation: float 9s ease-in-out infinite reverse; }
+/* Add this keyframe animation to your style.css file */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+}
+
+/* Find the .project-info block in your CSS */
+.project-info {
+    /* ... existing styles ... */
+    position: relative; /* This is essential for the dots to be positioned correctly */
+    z-index: 10; /* Give the sidebar a z-index higher than the dots */
+    /* ... existing styles ... */
+}
+
+/* Also, ensure the h3 and p elements inside have a z-index higher than the dots */
+.project-info h3, .project-info p, .project-info .project-details {
+    position: relative;
+    z-index: 11;
+}

@@ -1,0 +1,475 @@
+/*
+ * Updated styles-about.css
+ *
+ * This file contains specific styles for the aboutme page.
+ * It has been updated to avoid overwriting global styles from style.css,
+ * and includes new code for a bouncing scroll indicator, a top-right logo,
+ * and a fix for the "Elsewhere" section border.
+ */
+
+/*
+ * Note: To prevent conflicts, ensure that `styles-about.css` is loaded AFTER `style.css` in your HTML file.
+ * Also, consider using more specific selectors (e.g., .about-me-page .hero-section) if you have conflicting styles,
+ * but based on the provided content, these styles seem to be unique to the about page.
+ */
+
+:root {
+    --primary-font: 'Libre Baskerville', sans-serif;
+    --heading-font: 'Libre Baskerville', serif;
+    --text-color: #333;
+    --background-light: #FBFAF2; /* Very light beige/off-white from Gigi */
+    --border-color: #e0ded7; /* Subtle border/line color from Gigi */
+    --dark-grey: #666;
+    --accent-color: #bb2f63; /* Muted blue from Gigi's links */
+    --subtle-accent: #FFFF; /* Lighter shade for subtle elements */
+    --nav-bg: #FBFAF2; /* Slightly transparent white */
+    --nav-item-bg-hover: var(--subtle-accent);
+    --nav-item-text: var(--text-color);
+    --nav-item-text-hover: var(--accent-color);
+    --rosy-taupe: #7B6155;
+    --muted-grey: #A8A29E;
+}
+
+body {
+    margin: 0;
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    /* background-color: var(--background-light); */
+    background-color: #DCDFD6;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #4a54c9; /* Slightly darker accent on hover */
+}
+
+/* Parallax Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(hero2.svg) no-repeat center center;
+    background-size: cover;
+    /* background-attachment will be controlled by JS for smoother parallax */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    will-change: background-position; /* Hint browser for optimization */
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    will-change: transform; /* Hint browser for optimization */
+}
+
+.hero-name {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 26px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- NEW: Bouncing Scroll Indicator ---- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2em;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ---- NEW: Top-Right Logo ---- */
+.logo-link {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.logo {
+  width: 50px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.logo2 {
+  width: 30px; /* Adjust the size as needed */
+  height: auto;
+}
+
+/* Header and Navigation */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center the nav bar */
+    padding: 1rem 0;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    background-color: transparent; /* Transparent by default */
+    transform: translateY(-100%); /* Hidden initially */
+    box-sizing: border-box;
+}
+
+.site-header.visible {
+    transform: translateY(0);
+    background-color: var(--nav-bg); /* Opaque when visible */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.pill-nav {
+    display: flex;
+    background-color: var(--nav-bg);
+    border-radius: 50px; /* Pill shape */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border: 1px solid var(--border-color);
+}
+
+.pill-nav .nav-item {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    color: var(--nav-item-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 50px; /* Pill shape for items */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.pill-nav .nav-item:hover,
+.pill-nav .nav-item.active { /* Add .active class for current page */
+    background-color: var(--nav-item-bg-hover);
+    color: var(--nav-item-text-hover);
+}
+
+
+/* Main Content Wrapper */
+.content-wrapper {
+    max-width: 1200px; /* Wider for the grid layout */
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+
+/* Gigi About Me Section */
+.gigi-about-section {
+    padding-top: 2rem;
+    background-color: white; /* White background for this section */
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    margin-bottom: 3rem; /* Space before the next grid section */
+}
+
+.about-heading-group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-main-title {
+    font-family: var(--heading-font);
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1;
+}
+
+.pronouns-text {
+    font-size: 1rem;
+    color: var(--dark-grey);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-pronunciation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--dark-grey);
+    font-size: 0.9rem;
+}
+
+.about-pronunciation i {
+    cursor: pointer;
+    color: var(--accent-color);
+    transition: color 0.2s ease;
+}
+
+.about-pronunciation i:hover {
+    color: #4a54c9;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-text-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.about-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.portrait-container {
+    width: 200px;
+    height: 250px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-light);
+    flex-shrink: 0; /* Prevent shrinking if content is too large */
+}
+
+.portrait-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.elsewhere-section,
+.reach-out-section {
+    width: 100%;
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box; /* Fix for border overflow */
+}
+
+/* You may need to add a container with this class to your HTML */
+.white-border-container {
+  overflow: hidden;
+}
+
+.elsewhere-section h3,
+.reach-out-section h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.elsewhere-section p {
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+    align-items: center;
+    font-weight: 500; /* Make links slightly bolder */
+}
+
+.reach-out-section p {
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    line-height: 1.5;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* The `a` tag is now the container for the icon and text */
+.elsewhere-section p a {
+    display: inline-flex; /* Use flexbox to align icon and text */
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    /* Add transitions for a smooth animation effect on hover */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* The hover effect is now applied to the entire <a> tag */
+.elsewhere-section p a:hover {
+    color: var(--accent-color);
+    transform: scale(1.05); /* Grow on hover */
+    text-shadow: 0 0 10px rgb(255, 255, 255); /* Light glow effect for the text */
+}
+
+.elsewhere-icon {
+    margin-right: 0.8rem;
+    color: var(--accent-color);
+    width: 1.2em;
+    text-align: center;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add transitions for smooth effect */
+}
+
+/* Apply a drop shadow glow to the icon on hover */
+.elsewhere-section p a:hover .elsewhere-icon {
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255)); /* Glow effect for the icon */
+}
+
+.about-text-content ul {
+    list-style-type: disc; /* Use a standard disc for the bullet points */
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-text-content ul li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quote-block {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border-color);
+    font-style: italic;
+    color: var(--dark-grey);
+}
+
+.quote-block p {
+    margin: 0;
+}
+
+.quote-source {
+    font-weight: 1000; /* Make links slightly bolder */
+    margin-top: 0.5rem;
+    display: block;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+/* Updated Footer Styles */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    background-color: #fcfbf8;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted-grey);
+    line-height: 1.4;
+}
+
+.footer-left a,
+.footer-right a {
+    color: var(--muted-grey);
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+    color: var(--rosy-taupe);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-nav a {
+    text-transform: lowercase;
+    color: var(--muted-grey);
+    font-weight: 500;
+}
+
+.footer-nav a:hover {
+    color: var(--rosy-taupe);
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right p {
+    margin: 0;
+}
+
+#quote-area {
+    margin-top: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.quote-carousel-track {
+    display: inline-flex;
+    animation: marquee 400s linear infinite;
+}
+
+.quote-carousel-item {
+    padding: 0 1rem;
+    font-style: italic;
+    color: var(--dark-grey);
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quote-carousel-item i {
+    color: var(--accent-color);
+    font-size: 0.9em;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

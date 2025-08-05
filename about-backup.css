@@ -1,0 +1,142 @@
+
+/* New Interactive Pill Grid */
+.new-interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-rows: repeat(3, minmax(100px, auto)); /* 3 rows, minimum 100px height */
+    gap: 1rem; /* Gap between grid items */
+    margin-top: 3rem;
+}
+
+.grid-pill {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 15px; /* Pill shape corners */
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden; /* For animations */
+}
+
+.grid-pill:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    z-index: 1; /* Bring hovered item slightly forward */
+}
+
+/* Specific pill background colors */
+.quote-box-pill { background-color: #fdfaf3; }
+.cooking-box-pill { background-color: #fff3f0; }
+.kbeauty-box-pill { background-color: #f1f7ff; } /* Changed to a light blue for contrast */
+.film-box-pill { background-color: #f1f7ff; }
+.intention-box-pill { background-color: #f4fff4; }
+.reel-box-pill { background-color: #fffbe6; }
+.placeholder-pill { background-color: #e6f7ff; } /* Light blue for new placeholder */
+
+
+/* Pill Layout according to 3x5 grid: */
+/* 1   1 2  2 3 */
+/* 4 4 4 5 3 */
+/* 6 6 7 7 3 */
+
+.quote-box-pill {
+    grid-column: 1 / span 2; /* 1 */
+    grid-row: 1;
+}
+
+.cooking-box-pill {
+    grid-column: 3 / span 2; /* 2 */
+    grid-row: 1;
+}
+
+.kbeauty-box-pill {
+    grid-column: 5; /* 3 */
+    grid-row: 1 / span 3; /* Spans all 3 rows */
+    text-align: center;
+    justify-content: center; /* Center content vertically */
+}
+.korea-map-icon {
+    /* Existing Korea map styling */
+    /* background-image: url('[https://placehold.co/100x60/D0E0F0/000?text=Korea](https://placehold.co/100x60/D0E0F0/000?text=Korea)'); /* Placeholder for map graphic */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 60px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.film-box-pill {
+    grid-column: 1 / span 3; /* 4 */
+    grid-row: 2;
+}
+
+.intention-box-pill {
+    grid-column: 4; /* 5 */
+    grid-row: 2;
+}
+
+.reel-box-pill {
+    grid-column: 1 / span 2; /* 6 */
+    grid-row: 3;
+}
+
+.placeholder-pill {
+    grid-column: 3 / span 2; /* 7 */
+    grid-row: 3;
+}
+
+.pill-icon {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: var(--accent-color);
+    align-self: flex-end; /* Align icon to bottom right */
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.grid-pill:hover .pill-icon {
+    transform: rotate(5deg) scale(1.1);
+    opacity: 1;
+}
+
+.pill-source {
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+    margin-top: 0.5rem;
+    align-self: flex-end;
+}
+
+/* Specific animations for icons/emojis */
+.quote-box-pill .pill-icon {
+    font-size: 1.8rem;
+}
+.cooking-box-pill .pill-icon {
+    font-size: 2rem;
+}
+.kbeauty-box-pill .pill-icon {
+    font-size: 1.8rem;
+}
+.film-box-pill .pill-icon {
+    font-size: 1.8rem;
+}
+.intention-box-pill .pill-icon {
+    font-size: 2rem;
+    animation: plantWave 1.5s infinite ease-in-out;
+}
+@keyframes plantWave {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+.reel-box-pill .pill-icon {
+    font-size: 1.8rem;
+}

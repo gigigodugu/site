@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Gigi Godugu</title>
+    <link rel="shortcut icon" href="media/lotus.png" type="image/x-icon" />
+ </head>
+
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <h1>
+                Gigi Godugu
+            <a href="index.html">
+                <img src="media/lotus.png" alt="Gigi Godugu Logo" class="brand-logo">
+            </a>
+            </h1>
+            <p>Where strategy meets storytelling — elevating brands through insight & creativity</p>
+        </div>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">        
+
+
+        <div class="portfolio-filters">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter" onchange="filterByCategory()">
+            <option value="all">All Categories</option>
+            <option value="Consumer Product Innovations">Consumer Product Innovations</option>
+            <option value="Branding & Campaign Strategy">Branding & Campaign Strategy</option>
+            <option value="Strategic Business & Industry Analysis">Strategic Business & Industry Analysis</option>
+            <option value="Corporate Strategy">Corporate Strategy</option>
+            <option value="Analytics & Customer Segmentation">Analytics & Customer Segmentation</option>
+            <option value="Product Development & Reports">Product Development & Reports</option>
+            <option value="Creative Marketing">Creative Marketing</option>
+            <option value="Sports Marketing">Sports Marketing</option>
+            <option value="Marketing Analytics & Strategy">Marketing Analytics & Strategy</option>
+            <option value="Community Initiatives & Events">Community Initiatives & Events</option>
+        </select>
+        </div>
+
+
+<div class="portfolio-grid"> 
+
+    <div class="portfolio-item branding-and-campaign-strategy"
+    data-category="Branding & Campaign Strategy"
+    data-tags="Brand Identity Visual Storytelling Customer Journey Luxury Wellness Design Systems"
+    onclick="openPDF(
+        'Luxe Lounge — Brand Deck',
+        'portfolio_media/LuxeLounge.pdf',
+        {
+            description: 'A creative visual deck highlighting Luxe Lounge’s brand essence. Moodboards, color palettes, customer journey visuals, and positioning aligned to a luxury self-care experience.',
+            tags: ['Brand Identity', 'Visual Storytelling', 'Customer Journey', 'Luxury Wellness', 'Design Systems']
+        })">
+    <div class="portfolio-thumbnail thumb-9">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Luxe Lounge — Brand Deck</h4>
+            <p class="hover-caption">Visual Identity, Messaging, Concept Storytelling</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item consumer-product-innovations"
+    data-category="Consumer Product Innovations"
+    data-tags="Branding Beverage Innovation Go-To-Market Strategy Consumer Insights Pitch Deck Design"
+    onclick="openPDF(
+        'Esperoni — Your Favorite Shot, Reimagined',
+        'portfolio_media/Esperoni.pdf',
+        {
+            description: 'A ready-to-drink canned cocktail inspired by the Green Tea Shot, made for Gen Z and Millennial consumers. Bold packaging, high-ABV formula, and strategic pricing designed to evoke bar nostalgia while thriving in retail.',
+            tags: ['Branding', 'Beverage Innovation', 'Go-To-Market Strategy', 'Consumer Insights', 'Pitch Deck Design']
+        })">
+    <div class="portfolio-thumbnail thumb-1">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Esperoni</h4>
+            <p class="hover-caption">Branding, Beverage Innovation, Launch Strategy</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item analytics-and-customer-segmentation"
+    data-category="Analytics & Customer Segmentation"
+    data-tags="Analytics Groupon Strategy Monte Carlo Simulation Customer Retention"
+    onclick="openPDF(
+        'Yoga Factory — Simulation Analysis',
+        'portfolio_media/YogaFactory.pdf',
+        {
+            description: 'A Monte Carlo simulation and profitability analysis of Groupon-based promotions for Yoga Factory. Focused on evaluating customer acquisition, return probability, and campaign viability.',
+            tags: ['Analytics', 'Groupon Strategy', 'Monte Carlo Simulation', 'Customer Retention']
+        })">
+    <div class="portfolio-thumbnail thumb-11">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Yoga Factory — Simulation Analysis</h4>
+            <p class="hover-caption">Pricing Strategy, Promotions, Customer Retention</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="portfolio-item analytics-and-customer-segmentation"
+    data-category="Analytics & Customer Segmentation"
+    data-tags="Marketing Analytics Audience Segmentation Predictive Modeling Campaign Optimization Data Strategy"
+    onclick="openPDF(
+        'Unlocking the Power of Analytics in Modern Marketing',
+        'portfolio_media/PowerofAnalytics .pdf',
+        {
+            description: 'A thought leadership report showcasing how organizations can apply data analytics to elevate their marketing strategy. Covers performance tracking, predictive modeling, and segmentation.',
+            tags: ['Marketing Analytics', 'Audience Segmentation', 'Predictive Modeling', 'Campaign Optimization', 'Data Strategy']
+        })">
+    <div class="portfolio-thumbnail thumb-23">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Unlocking Analytics in Marketing</h4>
+            <p class="hover-caption">Data-Driven Strategy, Audience Targeting, Content Optimization</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item branding-and-campaign-strategy"
+    data-category="Branding & Campaign Strategy"
+    data-tags="Brand Strategy Consumer Research Voice & Messaging Market Segmentation Hospitality Branding"
+    onclick="openPDF(
+        'Hilton Strategic Foundations',
+        'portfolio_media/HiltonHotelsResortsStrategicFoundations.pdf',
+        {
+            description: 'Foundational research establishing Hilton Solace’s brand tone, customer personas, and value propositions. Includes emotional drivers and messaging to position Hilton in the wellness travel market.',
+            tags: ['Brand Strategy', 'Consumer Research', 'Voice & Messaging', 'Market Segmentation', 'Hospitality Branding']
+        })">
+    <div class="portfolio-thumbnail thumb-6">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Hilton Strategic Foundations</h4>
+            <p class="hover-caption">Consumer Research, Brand Voice, Differentiation</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="portfolio-item analytics-and-customer-segmentation"
+    data-category="Analytics & Customer Segmentation"
+    data-tags="Segmentation Models Customer Profiling Marketing Analytics Banking Strategy"
+    onclick="openPDF(
+        'Customer Segmentation in Retail Banking',
+        'portfolio_media/RetailBanking.pdf',
+        {
+            description: 'A segmentation strategy for retail banking, incorporating behavioral, demographic, and psychographic variables. Used to guide personalized product offerings and improve customer experience.',
+            tags: ['Segmentation Models', 'Customer Profiling', 'Marketing Analytics', 'Banking Strategy']
+        })">
+    <div class="portfolio-thumbnail thumb-12">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Customer Segmentation in Retail Banking</h4>
+            <p class="hover-caption">Data-Driven Marketing, Persona Modeling, Channel Optimization</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="portfolio-item branding-and-campaign-strategy"
+    data-category="Branding & Campaign Strategy"
+    data-tags="Investor Pitch Market Research Brand Identity Retail Strategy Canned Beverage Industry"
+    onclick="openPDF(
+        'Esperoni Pitch',
+        'portfolio_media/EsperoniPitch.pdf',
+        {
+            description: 'A full investor presentation showcasing Esperoni’s market viability and disruptive edge in the $70B RTD space. Visual identity, pricing strategy, and growth projections anchored by competitive research.',
+            tags: ['Investor Pitch', 'Market Research', 'Brand Identity', 'Retail Strategy', 'Canned Beverage Industry']
+        })">
+    <div class="portfolio-thumbnail thumb-2">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Esperoni Pitch</h4>
+            <p class="hover-caption">Investor Deck, Market Opportunity, Brand Identity</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Sponsorship Strategy Fundraising Collateral Visual Deck Design Community Engagement Nonprofit Marketing"
+    onclick="openPDF(
+        'PHDC — 2024 Sponsorship Deck',
+        'portfolio_media/PHDC2024SponsorshipDeck.pdf',
+        {
+            description: 'Professional-grade sponsorship packet with impact narratives and donor tiers. Designed for multiple events, featuring compelling visual storytelling.',
+            tags: ['Sponsorship Strategy', 'Fundraising Collateral', 'Visual Deck Design', 'Community Engagement', 'Nonprofit Marketing']
+        })">
+    <div class="portfolio-thumbnail thumb-30">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">PHDC — Sponsorship Deck</h4>
+            <p class="hover-caption">Donor Strategy, Visual Communication, Corporate Outreach</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item strategic-business-and-industry-analysis"
+    data-category="Strategic Business & Industry Analysis"
+    data-tags="Hospitality Strategy Brand Development Experience Design Wellness Innovation Concept Creation"
+    onclick="openPDF(
+        'Hilton Solace',
+        'portfolio_media/HiltonSolace.pdf',
+        {
+            description: 'A wellness-centric Hilton hotel concept built on the rising trend of restorative travel. Features detailed branding elements, suite experiences, and wellness integrations tailored to affluent health-focused travelers.',
+            tags: ['Hospitality Strategy', 'Brand Development', 'Experience Design', 'Wellness Innovation', 'Concept Creation']
+        })">
+    <div class="portfolio-thumbnail thumb-3">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Hilton Solace</h4>
+            <p class="hover-caption">Wellness Hospitality, Brand Expansion, Consumer Trends</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item corporate-strategy"
+    data-category="Corporate Strategy"
+    data-tags="Business Strategy Brand Positioning Financial Forecasting Scenario Planning Hospitality Research"
+    onclick="openPDF(
+        'Hilton Solace — Strategic Initiative',
+        'portfolio_media/HiltonSolaceStrategicInitiative.pdf',
+        {
+            description: 'A 10-year business plan for Hilton Solace, featuring financial modeling, phased rollout, and competitive positioning. Emphasizes brand longevity through market analysis and scenario planning.',
+            tags: ['Business Strategy', 'Brand Positioning', 'Financial Forecasting', 'Scenario Planning', 'Hospitality Research']
+        })">
+    <div class="portfolio-thumbnail thumb-4">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Hilton Solace — Strategic Initiative</h4>
+            <p class="hover-caption">Strategic Roadmap, Forecasting, Positioning</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item product-development-and-reports"
+    data-category="Product Development & Reports"
+    data-tags="Wellness Industry Business Planning Target Marketing Operational Strategy Brand Concepting"
+    onclick="openPDF(
+        'Luxe Lounge — Business Plan',
+        'portfolio_media/LuxeLoungeBusinessPlan.pdf',
+        {
+            description: 'A full-service spa concept prioritizing integrated wellness, nutrition, and self-care. Business model includes consumer research, target profiles, pricing strategy, and operational planning.',
+            tags: ['Wellness Industry', 'Business Planning', 'Target Marketing', 'Operational Strategy', 'Brand Concepting']
+        })">
+    <div class="portfolio-thumbnail thumb-8">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Luxe Lounge — Business Plan</h4>
+            <p class="hover-caption">Wellness Strategy, Spa Innovation, Holistic Experience</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item strategic-business-and-industry-analysis"
+    data-category="Strategic Business & Industry Analysis"
+    data-tags="Forecasting Competitive Analysis Strategic Planning Hospitality Economics Long-Term Growth"
+    onclick="openPDF(
+        'Hilton Strategic Assessment & 10-Year Forecast',
+        'portfolio_media/HiltonStrategicAssesment.pdf',
+        {
+            description: 'A high-level assessment of Hilton\'s brand performance, including industry benchmarks, SWOT insights, and growth trajectory forecasts that support expansion into the wellness space.',
+            tags: ['Forecasting', 'Competitive Analysis', 'Strategic Planning', 'Hospitality Economics', 'Long-Term Growth']
+        })">
+    <div class="portfolio-thumbnail thumb-5">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Hilton Strategic Assessment</h4>
+            <p class="hover-caption">Market Analysis, Brand Strategy, Financial Planning</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item marketing-analytics-and-strategy"
+    data-category="Marketing Analytics & Strategy"
+    data-tags="Social Media Marketing TikTok Strategy Gen Z Insights Engagement Metrics Advertising Analytics"
+    onclick="openPDF(
+        'TikTok Advertising — Customer Engagement Applications',
+        'portfolio_media/TikTokAdvertising.pdf',
+        {
+            description: 'An analytics-driven marketing playbook analyzing TikTok’s ad model and user engagement to guide campaign strategy. Includes platform insights, ad formats, and Gen Z targeting.',
+            tags: ['Social Media Marketing', 'TikTok Strategy', 'Gen Z Insights', 'Engagement Metrics', 'Advertising Analytics']
+        })">
+    <div class="portfolio-thumbnail thumb-24">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">TikTok Advertising Playbook</h4>
+            <p class="hover-caption">Gen Z Marketing, Behavioral Targeting, Social Media Strategy</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item strategic-business-and-industry-analysis"
+    data-category="Strategic Business & Industry Analysis"
+    data-tags="Biotech Sector Investment Strategy Risk Assessment Asset Management Market Analysis"
+    onclick="openPDF(
+        'The Politics, Pricing Pitfalls, Risk & Potential Reward in Biotech',
+        'portfolio_media/BioTech.pdf',
+        {
+            description: 'A professional whitepaper analyzing the biotech sector through a comprehensive investment strategy lens. The report examines macroeconomic trends, regulatory dynamics, and pricing challenges impacting early- and late-stage drug developers. It outlines key risk factors—such as clinical trial volatility and political scrutiny—while also identifying potential areas of opportunity driven by innovation cycles and demographic shifts. Designed to inform institutional decision-making through clear insights on sector exposure, valuation pressure points, and long-term growth potential.',
+            tags: ['Biotech Sector', 'Investment Strategy', 'Risk Assessment', 'Asset Management', 'Market Analysis']
+        })">
+    <div class="portfolio-thumbnail thumb-33">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">The Politics, Pricing Pitfalls, Risk & Potential Reward in Biotech</h4>
+            <p class="hover-caption">Investment Research, Sector Analysis, Market Risk Evaluation</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Community Engagement Event Strategy NFL Draft Youth Wellness Public Health Partnerships"
+    onclick="openPDF(
+        'NFL Draft — Citywide Experience Proposal',
+        'portfolio_media/NFLDraft2026.pdf',
+        {
+            description: 'A full proposal for reimagining the 2026 NFL Draft as a citywide experience rooted in East Liberty. Combines wellness, youth outreach, and equity-driven design.',
+            tags: ['Community Engagement', 'Event Strategy', 'NFL Draft', 'Youth Wellness', 'Public Health Partnerships']
+        })">
+    <div class="portfolio-thumbnail thumb-25">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">NFL Draft — Experience Proposal</h4>
+            <p class="hover-caption">Community Activation, Neighborhood Programming, Sports Strategy</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="portfolio-item product-development-and-reports"
+    data-category="Product Development & Reports"
+    data-tags="EdTech Accessibility Inclusive Design AI Tools Learning Innovation"
+    onclick="openPDF(
+        'Chegg — Accessibility & Innovation Strategy',
+        'portfolio_media/chegg.pdf',
+        {
+            description: 'A series of adaptive learning product concepts for Chegg, focused on improving access for neurodivergent learners and adults with intellectual disabilities.',
+            tags: ['EdTech', 'Accessibility', 'Inclusive Design', 'AI Tools', 'Learning Innovation']
+        })">
+    <div class="portfolio-thumbnail thumb-13">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Chegg — Accessibility Strategy</h4>
+            <p class="hover-caption">Inclusive Design, EdTech Innovation, AI Learning Solutions</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item creative-marketing"
+    data-category="Creative Marketing"
+    data-tags="Ad Campaign Strategy Consumer Engagement Influencer Marketing Pop Culture Activation"
+    onclick="openPDF(
+        'Doritos — Super Bowl Campaign',
+        'portfolio_media/DoritosSuperBowlCampaign.pdf',
+        {
+            description: 'A multi-channel campaign for Doritos’ “Try Another Angle” Super Bowl activation. Leveraged TikTok challenges, celebrity collaborations, and a mystery partner reveal to boost engagement for the Sweet & Tangy BBQ flavor.',
+            tags: ['Ad Campaign Strategy', 'Consumer Engagement', 'Influencer Marketing', 'Pop Culture Activation']
+        })">
+    <div class="portfolio-thumbnail thumb-10">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Doritos — Super Bowl Campaign</h4>
+            <p class="hover-caption">Pop Culture Marketing, Influencer Strategy, Experiential Engagement</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item branding-and-campaign-strategy"
+    data-category="Branding & Campaign Strategy"
+    data-tags="Retail Strategy Gen Z Insights Campaign Planning Influencer Marketing Trend Analysis"
+    onclick="openPDF(
+        'American Eagle Outfitters — Brand Growth Playbook',
+        'portfolio_media/AmericanEagleOutfitters.pdf',
+        {
+            description: 'A multi-pronged marketing strategy for AEO, including Gen Z trend analysis, influencer partnerships, and digital-first campaign proposals.',
+            tags: ['Retail Strategy', 'Gen Z Insights', 'Campaign Planning', 'Influencer Marketing', 'Trend Analysis']
+        })">
+    <div class="portfolio-thumbnail thumb-15">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">AEO — Brand Growth Playbook</h4>
+            <p class="hover-caption">Gen Z Marketing, Trend Forecasting, Retail Expansion</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="portfolio-item analytics-and-customer-segmentation"
+    data-category="Analytics & Customer Segmentation"
+    data-tags="Industry Analysis Competitive Benchmarking Data Visualization SWOT Business Intelligence"
+    onclick="openPDF(
+        'Hilton Company & Industry Data Analysis',
+        'portfolio_media/HiltonCompanyDataAnalysis.pdf',
+        {
+            description: 'An internal performance review for Hilton, featuring market share visuals, SWOT insights, and competitive benchmarking across the hospitality sector to inform brand growth strategy.',
+            tags: ['Industry Analysis', 'Competitive Benchmarking', 'Data Visualization', 'SWOT', 'Business Intelligence']
+        })">
+    <div class="portfolio-thumbnail thumb-7">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Hilton Data Analysis</h4>
+            <p class="hover-caption">Data Analysis, Industry Benchmarking, SWOT Review</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Client Strategy NFL Partnerships Neighborhood Planning Fan Experience Design Event Logistics"
+    onclick="openPDF(
+        'NFL Draft — Client Report',
+        'portfolio_media/NFLDraftClientReport.pdf',
+        {
+            description: 'An executive briefing for stakeholders planning the 2026 NFL Draft in Pittsburgh. Emphasizes ThinkFirst partnership and immersive fan experiences.',
+            tags: ['Client Strategy', 'NFL Partnerships', 'Neighborhood Planning', 'Fan Experience Design', 'Event Logistics']
+        })">
+    <div class="portfolio-thumbnail thumb-26">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">NFL Draft — Client Report</h4>
+            <p class="hover-caption">Nonprofit Collaboration, Draft Week Planning, Stakeholder Strategy</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item strategic-business-and-industry-analysis"
+    data-category="Strategic Business & Industry Analysis"
+    data-tags="Product Strategy Innovation Pipeline Decision Matrix Consumer Electronics SWOT Analysis"
+    onclick="openPDF(
+        'Dyson — New Product Development Strategy',
+        'portfolio_media/Dyson.pdf',
+        {
+            description: 'A strategic evaluation of three new product opportunities for Dyson—Compact Vacuum, Smart Hairbrush, and GreenWork outdoor tools—scored through feasibility, ROI, and strategic fit.',
+            tags: ['Product Strategy', 'Innovation Pipeline', 'Decision Matrix', 'Consumer Electronics', 'SWOT Analysis']
+        })">
+    <div class="portfolio-thumbnail thumb-14">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Dyson — Product Strategy</h4>
+            <p class="hover-caption">Consumer Tech Innovation, Portfolio Expansion, Market Entry</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item branding-and-campaign-strategy"
+    data-category="Branding & Campaign Strategy"
+    data-tags="Campaign Briefing Target Audience Strategy Creative Direction Nonprofit Marketing Influencer Framework"
+    onclick="openPDF(
+        'PA Humanities — Creative Brief',
+        'portfolio_media/PAHumanitiesCreativeBrief.pdf',
+        {
+            description: 'A strategic foundation outlining audience targeting, brand perception, and influencer messaging for a college-focused PA Humanities campaign.',
+            tags: ['Campaign Briefing', 'Target Audience Strategy', 'Creative Direction', 'Nonprofit Marketing', 'Influencer Framework']
+        })">
+    <div class="portfolio-thumbnail thumb-16">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">PA Humanities — Creative Brief</h4>
+            <p class="hover-caption">Campaign Planning, Audience Strategy, Brand Positioning</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item creative-marketing"
+    data-category="Creative Marketing"
+    data-tags="Email Campaign Streaming Media Gen Z Marketing Digital Activation User Retention"
+    onclick="openPDF(
+        'MAX — Streaming Platform Campaign',
+        'portfolio_media/MAX.pdf',
+        {
+            description: 'An email-based marketing campaign promoting the rebranded MAX platform. Messaging strategy, behavioral segmentation, app transition CTAs, and KPI tracking.',
+            tags: ['Email Campaign', 'Streaming Media', 'Gen Z Marketing', 'Digital Activation', 'User Retention']
+        })">
+    <div class="portfolio-thumbnail thumb-21">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">MAX — Streaming Campaign</h4>
+            <p class="hover-caption">Email Marketing, User Retention, Platform Rebrand</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item sports-marketing"
+    data-category="Sports Marketing"
+    data-tags="Visual Analysis Logo Evolution Brand Strategy Rhetoric in Design Sports Branding"
+    onclick="openPDF(
+        'Logo Analysis — Formula 1',
+        'portfolio_media/LogoAnalysisFormula1.pdf',
+        {
+            description: 'A visual and rhetorical breakdown of Formula 1’s logo evolution, comparing design choices across eras and evaluating the branding impact under Liberty Media.',
+            tags: ['Visual Analysis', 'Logo Evolution', 'Brand Strategy', 'Rhetoric in Design', 'Sports Branding']
+        })">
+    <div class="portfolio-thumbnail thumb-20">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Formula 1 — Logo Analysis</h4>
+            <p class="hover-caption">Brand Identity, Design Analysis, Sports Marketing</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item creative-marketing"
+    data-category="Creative Marketing"
+    data-tags="Influencer Marketing Social Engagement Ad Campaign Higher Ed Outreach Nonprofit Strategy"
+    onclick="openPDF(
+        'PA Humanities — Advertising Campaign',
+        'portfolio_media/PAHumanitiesAdvertisingCampaign.pdf',
+        {
+            description: 'A full influencer-based advertising campaign for PA Humanities targeting Pennsylvania college students. Featured social-first activations, KPIs, and promotional plans.',
+            tags: ['Influencer Marketing', 'Social Engagement', 'Ad Campaign', 'Higher Ed Outreach', 'Nonprofit Strategy']
+        })">
+    <div class="portfolio-thumbnail thumb-17">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">PA Humanities — Ad Campaign</h4>
+            <p class="hover-caption">Integrated Marketing, Influencer Strategy, Nonprofit Engagement</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Fundraising Sponsorship Outreach Nonprofit Strategy Event Coordination Student Leadership"
+    onclick="openPDF(
+        'PHDC — Fundraising & Event Planning',
+        'portfolio_media/PHDC_ Fundraising.pdf',
+        {
+            description: 'Coordinated PHDC’s largest fundraiser, combining strategic sponsorship outreach with campus promotion. Built resilience and collaboration through pivots and logistics.',
+            tags: ['Fundraising', 'Sponsorship Outreach', 'Nonprofit Strategy', 'Event Coordination', 'Student Leadership']
+        })">
+    <div class="portfolio-thumbnail thumb-29">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">PHDC — Fundraising Strategy</h4>
+            <p class="hover-caption">Sponsorship Strategy, Outreach, Student-Led Planning</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Visual Communication Pitch Design NFL Strategy Neighborhood Engagement Play 60"
+    onclick="openPDF(
+        'NFL Draft 2026 — Slide Deck',
+        'portfolio_media/NFLDraft.pdf',
+        {
+            description: 'A slide presentation summarizing the NFL Draft proposal’s value-adds, designed for visual storytelling to NFL decision-makers. Emphasizes community alignment.',
+            tags: ['Visual Communication', 'Pitch Design', 'NFL Strategy', 'Neighborhood Engagement', 'Play 60']
+        })">
+    <div class="portfolio-thumbnail thumb-27">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">NFL Draft — Slide Deck</h4>
+            <p class="hover-caption">Visual Pitch, Event Highlights, Partnership Overview</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item product-development-and-reports"
+    data-category="Product Development & Reports"
+    data-tags="UX Design Customer Segmentation Fintech Innovation Mission-Based Investing MVP Strategy"
+    onclick="openPDF(
+        'Investment MVP Blueprint',
+        'portfolio_media/InvestmentMVP.pdf',
+        {
+            description: 'A full blueprint for a fintech platform that enables socially driven investing through curated playlists and mission-based portfolios. Includes wireframes, user flows, persona mapping, and feature prioritization.',
+            tags: ['UX Design', 'Customer Segmentation', 'Fintech Innovation', 'Mission-Based Investing', 'MVP Strategy']
+        })">
+    <div class="portfolio-thumbnail thumb-22">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Investment MVP Blueprint</h4>
+            <p class="hover-caption">UX Strategy, Community Investing, Customer Journey Mapping</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item creative-marketing"
+    data-category="Creative Marketing"
+    data-tags="Ad Creative Visual Strategy Gen Z Marketing Digital Campaign Design Nonprofit Awareness"
+    onclick="openPDF(
+        'PA Humanities — Campaign Ads',
+        'portfolio_media/PAHumanitiesAds.pdf',
+        {
+            description: 'Visual ad concepts and supporting creatives developed for the PA Humanities initiative. Included hero and subordinate ad treatments to drive engagement.',
+            tags: ['Ad Creative', 'Visual Strategy', 'Gen Z Marketing', 'Digital Campaign Design', 'Nonprofit Awareness']
+        })">
+    <div class="portfolio-thumbnail thumb-18">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">PA Humanities — Campaign Ads</h4>
+            <p class="hover-caption">Visual Strategy, Content Design, Youth Outreach</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item product-development-and-reports"
+    data-category="Product Development & Reports"
+    data-tags="Product Development User Research Concept Validation Feature Prioritization MVP Strategy"
+    onclick="openPDF(
+        'Case 3 — Product Development Strategy',
+        'portfolio_media/Case3.pdf',
+        {
+            description: 'A collaborative recommendation for a new social trading app concept based on market gap analysis and user needs. Evaluated MVP design and feature roadmap.',
+            tags: ['Product Development', 'User Research', 'Concept Validation', 'Feature Prioritization', 'MVP Strategy']
+        })">
+    <div class="portfolio-thumbnail thumb-19">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Case 3 — Product Strategy</h4>
+            <p class="hover-caption">User Research, Feature Prioritization, Value Propositions</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Community Health Event Planning Wellness Strategy Mindfulness Programming Public Engagement"
+    onclick="openPDF(
+        'East Liberty Wellness Retreat',
+        'portfolio_media/EastLiberty.pdf',
+        {
+            description: 'A community-driven initiative promoting mental and physical well-being in East Liberty. Emphasized reflection, accessibility, and inclusive outreach.',
+            tags: ['Community Health', 'Event Planning', 'Wellness Strategy', 'Mindfulness Programming', 'Public Engagement']
+        })">
+    <div class="portfolio-thumbnail thumb-28">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">East Liberty Wellness Retreat</h4>
+            <p class="hover-caption">Community Wellness, Event Planning, Holistic Health</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item consumer-product-innovations"
+    data-category="Consumer Product Innovations"
+    data-tags="Packaging Design Consumer Behavior Brand Extension Product Innovation Marketing Research"
+    onclick="openPDF(
+        'Pop-Tarts Baking Mix — Product Box Design',
+        'portfolio_media/PopTarts.pdf',
+        {
+            description: 'A consumer behavior-driven product concept developed through rigorous academic research. This project proposed a new line of “Pop-Tarts Baking Mixes” aimed at blending nostalgic branding with modern convenience. Applied segmentation analysis, MAAM modeling, and laddering interviews to identify unmet needs and define positioning. Final output included custom product packaging, a creative print campaign, social-first promotional rollout, and an emotional branding theme—“Be Your Most Real Self”—targeted toward Gen Z and Millennial consumers.',
+            tags: ['Packaging Design', 'Consumer Behavior', 'Brand Extension', 'Product Innovation', 'Marketing Research']
+        })">
+    <div class="portfolio-thumbnail thumb-32">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">Pop-Tarts Baking Mix — Product Box Design</h4>
+            <p class="hover-caption">Product Innovation, Consumer Research, Brand Extension Strategy</p>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-item community-initiatives-and-events"
+    data-category="Community Initiatives & Events"
+    data-tags="Flyer Design Event Promotion Visual Communication Fundraising Collateral Nonprofit Engagement"
+    onclick="openPDF(
+        'PHDC — Fundraising Flyer',
+        'portfolio_media/PHDC.jpg',
+        {
+            description: 'A visually engaging flyer for PHDC’s annual event. Designed for accessibility, impact clarity, and visual storytelling in a single-page format.',
+            tags: ['Flyer Design', 'Event Promotion', 'Visual Communication', 'Fundraising Collateral', 'Nonprofit Engagement']
+        })">
+    <div class="portfolio-thumbnail thumb-31">
+        <div class="portfolio-hover-content">
+            <h4 class="hover-title">PHDC — Fundraising Flyer</h4>
+            <p class="hover-caption">Event Collateral, Visual Strategy, Community Engagement</p>
+        </div>
+    </div>
+</div>
+
+</div>
+    </section>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-container">
+            <div class="pdf-header">
+                <button class="close-btn" onclick="closePDF()">&times;</button>
+            </div>
+            <iframe class="pdf-viewer" id="pdfViewer" src=""></iframe>
+            <!-- <object class="pdf-viewer" id="pdfViewer" type="application/pdf" data=""></object> -->
+            <div class="project-info">
+                <!-- <div id="dot-1" class="floating-element float-1"></div>
+                <div id="dot-2" class="floating-element float-2"></div>
+                <div id="dot-3" class="floating-element float-3"></div>
+                <div id="dot-4" class="floating-element float-4"></div>
+                <div id="dot-5" class="floating-element float-5"></div>
+                <div id="dot-6" class="floating-element float-6"></div>
+                <div id="dot-7" class="floating-element float-7"></div>
+                <div id="dot-8" class="floating-element float-8"></div> -->
+
+                <div class="project-info-content">
+                    <h3 id="projectTitle">Project Title</h3>
+                    <div class="project-details" id="projectDetails">
+                         can add detailed information about the project, including the objectives, challenges faced, and solutions implemented.
+                    </div>
+                    <div class="project-tags" id="projectTags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">React</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+let currentProjectIndex = -1;
+let portfolioItems = [];
+
+
+function openPDF(title, pdfUrl, details = {}) {
+    const modal = document.getElementById('pdfModal');
+    const viewer = document.getElementById('pdfViewer');
+    
+    // Get the category from the data-attribute of the clicked item
+    const clickedItem = event.target.closest('.portfolio-item');
+    const category = clickedItem ? clickedItem.getAttribute('data-category') : null;
+    
+    // Set the sidebar color based on the category
+    setSidebarColor(category);
+    
+    // Update project info
+    document.getElementById('projectTitle').textContent = title;
+    document.getElementById('projectDetails').textContent = details.description || 'This is where you can add detailed information about the project, including the objectives, challenges faced, and solutions implemented.';
+    
+    // Update tags if provided
+    if (details.tags) {
+        const tagsContainer = document.getElementById('projectTags');
+        tagsContainer.innerHTML = details.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    }
+    
+    viewer.src = `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`;
+    modal.classList.add('active');
+    
+    document.body.style.overflow = 'hidden';
+
+    portfolioItems = Array.from(document.querySelectorAll('.portfolio-item'))
+                          .filter(item => item.offsetParent !== null);
+    
+    currentProjectIndex = portfolioItems.findIndex(el => el.contains(clickedItem));
+    // modal.className = `pdf-modal active ${category.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+
+}
+        function closePDF() {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+            
+            modal.classList.remove('active');
+            viewer.src = '';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+function goToProject(direction) {
+    if (currentProjectIndex === -1 || portfolioItems.length === 0) return;
+
+    currentProjectIndex += direction;
+
+    // Wrap around navigation
+    if (currentProjectIndex < 0) currentProjectIndex = portfolioItems.length - 1;
+    if (currentProjectIndex >= portfolioItems.length) currentProjectIndex = 0;
+
+    portfolioItems[currentProjectIndex].click(); // simulate click
+}
+
+
+        // Close modal when clicking outside the PDF container
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePDF();
+            }
+        });
+
+document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('pdfModal');
+    const isOpen = modal.classList.contains('active');
+
+    if (!isOpen) return;
+
+    switch (e.key) {
+        case 'Escape':
+            closePDF();
+            break;
+        case 'ArrowLeft':
+            goToProject(-1);
+            break;
+        case 'ArrowRight':
+            goToProject(1);
+            break;
+    }
+});
+
+
+        // Add smooth scroll behavior for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+function filterProjects() {
+  const filter = document.getElementById('tagFilter').value.toLowerCase();
+  const items = document.querySelectorAll('.portfolio-item');
+
+  items.forEach(item => {
+    const tags = item.getAttribute('data-tags').toLowerCase();
+    if (filter === 'all' || tags.includes(filter)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function filterByCategory() {
+  const selected = document.getElementById('categoryFilter').value;
+  const items = document.querySelectorAll('.portfolio-item');
+
+  items.forEach(item => {
+    const category = item.getAttribute('data-category');
+    if (selected === 'all' || category === selected) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function setSidebarColor(category) {
+    const root = document.documentElement;
+    let mainColor;
+    let dotColor;
+
+    switch (category) {
+        case 'Consumer Product Innovations':
+            mainColor = '#D7CE93';
+            // mainColor = '#fbe8d3';
+            dotColor = '#D3C4B6'; // Mushroom Taupe
+            break;
+        case 'Branding & Campaign Strategy':
+            mainColor = '#D7CE93';
+            dotColor = '#CBBBA5'; // Sandstone Beige
+            break;
+        case 'Strategic Business & Industry Analysis':
+            mainColor = '#D7CE93';
+            // mainColor = '#e3ebdc';
+            dotColor = '#A2968E'; // Greige
+            break;
+        case 'Corporate Strategy':
+            mainColor = '#D7CE93';
+            // mainColor = '#f0ddeb';
+            dotColor = '#B2B8A3'; // Muted Stone
+            break;
+        case 'Analytics & Customer Segmentation':
+            mainColor = '#D7CE93';
+            // mainColor = '#e3e4f3';
+            dotColor = '#7B6155'; // Rosy Taupe
+            break;
+        case 'Product Development & Reports':
+            mainColor = '#D7CE93';
+            // mainColor = '#e9dde8';
+            dotColor = '#3B2E2A'; // Cocoa
+            break;
+        case 'Creative Marketing':
+            mainColor = '#D7CE93';
+            // mainColor = '#e4f1d4';
+            dotColor = '#D3C4B6'; // Mushroom Taupe (example of reuse)
+            break;
+        case 'Sports Marketing':
+            mainColor = '#D7CE93';
+            // mainColor = '#d3e4e9';
+            dotColor = '#CBBBA5'; // Sandstone Beige (example of reuse)
+            break;
+        case 'Marketing Analytics & Strategy':
+            mainColor = '#D7CE93';
+            // mainColor = '#e0f3f2';
+            dotColor = '#A2968E'; // Greige (example of reuse)
+            break;
+        case 'Community Initiatives & Events':
+            mainColor = '#D7CE93';
+            // mainColor = '#f6e8d2';
+            dotColor = '#B2B8A3'; // Muted Stone (example of reuse)
+            break;
+        default:
+            mainColor = '#D7CE93';
+            // mainColor = '#f9f5ef';
+            dotColor = '#D3C4B6';
+    }
+
+    root.style.setProperty('--sidebar-color', mainColor);
+
+    // This is the new part that will directly apply the single color to all dots
+    const dots = document.querySelectorAll('.floating-element');
+    dots.forEach((dot) => {
+        dot.style.backgroundColor = dotColor;
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Gigi Godugu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-font: 'Libre Baskerville', serif;
+            --heading-font: 'Montserrat', sans-serif;
+            --red-color: #E53E3E;
+            --dark-text: #2D3748;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: var(--primary-font);
+        }
+        
+        .coming-soon-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        /* Red wrapping paper background */
+        .wrapping-paper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/media/bites\ wrapping.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        /* Torn paper effect overlay */
+        .torn-paper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/media/torn-paper-mask.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+            mix-blend-mode: multiply;
+        }
+
+        /* White paper center area */
+        .white-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 60%;
+            background-color: white;
+            border-radius: 20px;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 4;
+            max-width: 500px;
+            padding: 0 20px;
+        }
+
+        /* Hey there cutie text */
+        .greeting {
+            font-family: var(--primary-font);
+            font-weight: 400;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            letter-spacing: 0.15em;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Apple pie emoji/image */
+        .pie-icon {
+            width: 128px;
+            height: 128px;
+        }
+
+        /* Main coming soon text */
+        .coming-soon-text {
+            font-family: var(--heading-font);
+            font-weight: 900;
+            font-size: clamp(3.5rem, 12vw, 6rem);
+            margin: 0;
+            line-height: 0.85;
+            letter-spacing: -0.02em;
+            color: var(--red-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Instagram handle */
+        .instagram-handle {
+            font-family: var(--primary-font);
+            font-weight: 400;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            color: var(--dark-text);
+            letter-spacing: 0.1em;
+            margin-top: 1rem;
+        }
+        /* Logo styles - modified */
+        .logo-link {
+            /* Position is no longer fixed, it's part of the flow */
+            margin-top: 2rem; /* Add some space between the handle and the logo */
+            display: inline-block;
+        }
+
+.logo {
+  width: 50px; /* Adjust the size as needed */
+  height: auto;
+}
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .white-center {
+                width: 85%;
+                height: 70%;
+            }
+            
+            .greeting {
+                font-size: 0.8rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .pie-icon {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .instagram-handle {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .white-center {
+                width: 90%;
+                height: 75%;
+                border-radius: 15px;
+            }
+            
+            .coming-soon-text {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="coming-soon-container">
+        <!-- Red wrapping paper background -->
+        <div class="wrapping-paper"></div>
+        
+        <!-- Torn paper effect -->
+        <div class="torn-paper"></div>
+        
+        <!-- White center area -->
+        <div class="white-center">
+            <div class="content">
+                <div class="greeting">
+                    HEY THERE CUTIE
+                    <img src="/media/PIE.png" alt="Apple pie" class="pie-icon">
+                </div>
+                
+                <h1 class="coming-soon-text">COMING</h1>
+                <h1 class="coming-soon-text">SOON</h1>
+                
+                <div class="instagram-handle">@bites_with_gigi</div>
+                <a href="index.html" class="logo-link">
+                <img src="media/lotus.png" alt="Homepage Logo" class="logo">
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,665 @@
+/* General Body Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Typography for Headings */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header and Navigation */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 5%;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+.brand p {
+    margin: 4px 0 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    margin-left: 2rem;
+}
+
+.site-nav a:hover {
+    color: #666;
+}
+
+/* Main Content Grid (for index.html) */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 5%;
+}
+
+.grid-link {
+    text-decoration: none;
+    display: block;
+}
+
+.grid-item {
+    width: 100%;
+    padding-top: 60%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s ease;
+}
+
+.grid-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+/* HOVER EFFECT for Grid Items */
+.grid-link:hover .grid-item {
+    background-color: #F3EADF;
+}
+
+.grid-link:hover .grid-item span {
+    color: #5D4037;
+}
+
+.grid-link:hover .color-block-1,
+.grid-link:hover .color-block-3,
+.grid-link:hover .color-block-4,
+.grid-link:hover .color-block-5,
+.grid-link:hover .color-block-6 {
+    background-blend-mode: overlay;
+}
+
+/* Block Colors & Textures */
+.color-block-1 { background-color: #c8dbe3; background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); }
+.color-block-2 { background-color: #b2d8a6; }
+.color-block-3 { background-color: #ada6a3; background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); }
+.color-block-4 { background-color: #e82664; background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); }
+.color-block-5 { background-color: #adc20e; background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); }
+.color-block-6 { background-color: #a71794; background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); }
+
+/* Custom scroll-in animation classes */
+.scroll-in-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+.scroll-in-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experiences Section */
+.experiences-section {
+    padding: 2rem 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #c8dbe3, #b2d8a6, #ada6a3, #e82664);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.timeline-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: 55%;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: 55%;
+    text-align: right;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid #fff;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-right: 15px solid #fff;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid;
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+.timeline-item:nth-child(1) .timeline-dot { border-color: #c8dbe3; }
+.timeline-item:nth-child(2) .timeline-dot { border-color: #b2d8a6; }
+.timeline-item:nth-child(3) .timeline-dot { border-color: #ada6a3; }
+.timeline-item:nth-child(4) .timeline-dot { border-color: #e82664; }
+.timeline-item:nth-child(5) .timeline-dot { border-color: #c8dbe3; }
+.timeline-item:nth-child(6) .timeline-dot { border-color: #b2d8a6; }
+
+.timeline-item.active .timeline-dot {
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.experience-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.experience-company {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.experience-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.timeline-item:nth-child(even) .experience-skills {
+    justify-content: flex-end;
+}
+
+.skill-tag {
+    background: #f0f0f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:nth-child(1) .skill-tag:hover { background: #c8dbe3; color: #fff; }
+.timeline-item:nth-child(2) .skill-tag:hover { background: #b2d8a6; color: #fff; }
+.timeline-item:nth-child(3) .skill-tag:hover { background: #ada6a3; color: #fff; }
+.timeline-item:nth-child(4) .skill-tag:hover { background: #e82664; color: #fff; }
+.timeline-item:nth-child(5) .skill-tag:hover { background: #c8dbe3; color: #fff; }
+.timeline-item:nth-child(6) .skill-tag:hover { background: #b2d8a6; color: #fff; }
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 2rem 9% 4rem;
+    max-width: none;
+    margin: 0 auto;
+}
+
+/* Portfolio Grid - 3 columns */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+/* Portfolio Item */
+.portfolio-item {
+    background: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumbnail */
+.portfolio-thumbnail {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-thumbnail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(200, 219, 227, 0.8), rgba(178, 216, 166, 0.8));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-thumbnail::before {
+    opacity: 1;
+}
+
+/* Content */
+.portfolio-content {
+    padding: 1.5rem;
+}
+
+.portfolio-title-item {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.portfolio-description {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* PDF Popup Modal */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.pdf-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-container {
+    display: flex;
+    background: none;
+    border-radius: 0;
+    width: 95%;
+    height: 90%;
+    max-width: none;
+    max-height: 800px;
+    position: relative;
+    box-shadow: none;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.pdf-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.pdf-header:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-title {
+    display: none;
+}
+
+.pdf-viewer {
+    width: 85%;
+    height: 100%;
+    border: none;
+    background: white;
+    overflow-y: scroll;
+}
+
+.project-info {
+    width: 15%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-info::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+.project-info-content {
+    position: relative;
+    z-index: 2;
+}
+
+.project-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.project-details {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.project-stats {
+    margin-top: auto;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Floating Elements (Background animations) */
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.float-1 { top: 10%; left: 10%; width: 60px; height: 60px; background: #c8dbe3; border-radius: 50%; animation: float 8s ease-in-out infinite; }
+.float-2 { top: 30%; right: 15%; width: 40px; height: 40px; background: #b2d8a6; transform: rotate(45deg); animation: float 6s ease-in-out infinite reverse; }
+.float-3 { bottom: 20%; left: 20%; width: 80px; height: 80px; background: #ada6a3; border-radius: 20px; animation: float 10s ease-in-out infinite; }
+.float-4 { bottom: 40%; right: 25%; width: 50px; height: 50px; background: #e82664; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: float 7s ease-in-out infinite reverse; }
+/* ... (and so on for float-5 to float-50, or a representative subset) ... */
+.float-5 { top: 15%; left: 30%; width: 35px; height: 35px; background: #9bd7f5; transform: rotate(60deg); animation: float 7.5s ease-in-out infinite; }
+.float-6 { bottom: 5%; right: 35%; width: 70px; height: 70px; background: #f7b762; border-radius: 25px; animation: float 9s ease-in-out infinite reverse; }
+.float-7 { top: 50%; right: 5%; width: 45px; height: 45px; background: #d8a0f5; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: float 6.8s ease-in-out infinite; }
+.float-8 { top: 5%; right: 50%; width: 60px; height: 60px; background: #b2d8a6; transform: rotate(15deg); animation: float 8s ease-in-out infinite reverse; }
+.float-9 { bottom: 30%; left: 45%; width: 55px; height: 55px; background: #c8dbe3; border-radius: 10px; animation: float 11s ease-in-out infinite; }
+.float-10 { top: 70%; left: 10%; width: 30px; height: 30px; background: #e82664; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: float 6s ease-in-out infinite; }
+.float-11 { bottom: 15%; left: 70%; width: 40px; height: 40px; background: #84d2f6; transform: rotate(75deg); animation: float 9.5s ease-in-out infinite reverse; }
+.float-12 { top: 25%; right: 40%; width: 20px; height: 20px; background: #f0a35c; border-radius: 30px; animation: float 12s ease-in-out infinite; }
+.float-13 { bottom: 60%; left: 5%; width: 50px; height: 50px; background: #ac79c2; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: float 8.2s ease-in-out infinite reverse; }
+.float-14 { top: 20%; left: 40%; width: 70px; height: 70px; background: #a76a0f; border-radius: 10px; animation: float 9s ease-in-out infinite; }
+.float-15 { bottom: 10%; right: 90%; width: 55px; height: 55px; background: #0c5e3f; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); animation: float 11s ease-in-out infinite reverse; }
+
+/* Parallax Background Sections */
+.parallax-section {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Footer */
+footer {
+    background-color: #1a202c;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .site-nav a {
+        margin-left: 0;
+        margin-right: 2rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        padding-left: 80px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .timeline-dot {
+        left: 30px;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::after,
+    .timeline-item:nth-child(odd) .timeline-content::after {
+        left: -15px;
+        right: auto;
+        border-right: 15px solid #fff;
+        border-left: none;
+    }
+
+    .timeline-item:nth-child(even) .experience-skills {
+        justify-content: flex-start;
+    }
+
+    .floating-element {
+        display: none;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .pdf-container {
+        flex-direction: column;
+        width: 98%;
+        height: 95%;
+    }
+
+    .pdf-viewer {
+        width: 100%;
+        height: 60%;
+    }
+
+    .project-info {
+        width: 100%;
+        height: 40%;
+        padding: 1.5rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .portfolio-title {
+        font-size: 2rem;
+    }
+
+    .pdf-container {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
