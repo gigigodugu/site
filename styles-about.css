@@ -12,6 +12,9 @@
  * Also, consider using more specific selectors (e.g., .about-me-page .hero-section) if you have conflicting styles,
  * but based on the provided content, these styles seem to be unique to the about page.
  */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
 :root {
     --primary-font: 'Libre Baskerville', sans-serif;
@@ -52,7 +55,7 @@ a:hover {
 /* Parallax Hero Section */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(hero2.svg) no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(media/hero2.svg) no-repeat center center;
     background-size: cover;
     /* background-attachment will be controlled by JS for smoother parallax */
     display: flex;
@@ -383,17 +386,21 @@ a:hover {
     text-align: right;
 }
 
+
+/* Replace the existing footer section in styles-about.css with this: */
+
 /* Updated Footer Styles */
 .site-footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 2rem 5%;
+    padding: 1.4rem 5%; /* Keep original compact padding for better alignment */
     font-size: 0.9rem;
     color: var(--dark-grey);
     background-color: #fcfbf8;
     border-top: 1px solid var(--border-color);
     flex-wrap: wrap;
+    font-family: var(--primary-font); /* Added font-family */
 }
 
 .footer-left p {
@@ -401,6 +408,7 @@ a:hover {
     font-size: 12px;
     color: var(--muted-grey);
     line-height: 1.4;
+    font-family: var(--primary-font); /* Added font-family */
 }
 
 .footer-left a,
@@ -413,6 +421,11 @@ a:hover {
     color: var(--rosy-taupe);
 }
 
+.logo2 {
+    width: 30px;
+    height: auto;
+}
+
 .footer-nav {
     display: flex;
     gap: 2rem;
@@ -421,7 +434,10 @@ a:hover {
 .footer-nav a {
     text-transform: lowercase;
     color: var(--muted-grey);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium); /* Changed from 500 to variable */
+    text-decoration: none; /* Added explicit text-decoration */
+    transition: color 0.2s ease; /* Added transition */
+    font-family: var(--primary-font); /* Added font-family */
 }
 
 .footer-nav a:hover {
@@ -434,15 +450,25 @@ a:hover {
 
 .footer-right p {
     margin: 0;
+    color: var(--dark-grey); /* Added explicit color */
+    font-family: var(--primary-font); /* Added font-family */
+}
+
+.footer-right a {
+    color: var(--muted-grey);
+}
+
+.footer-right a:hover {
+    color: var(--rosy-taupe);
 }
 
 #quote-area {
-    margin-top: 2rem;
+    margin-top: 1.7rem; /* Keep original compact spacing */
     overflow: hidden;
     white-space: nowrap;
     text-align: center;
     border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
+    padding-top: 0.8rem; /* Keep original compact padding */
 }
 
 .quote-carousel-track {
@@ -454,10 +480,11 @@ a:hover {
     padding: 0 1rem;
     font-style: italic;
     color: var(--dark-grey);
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Changed from 1.05rem to 1.1rem to match expstyle */
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    font-family: var(--primary-font); /* Added font-family */
 }
 
 .quote-carousel-item i {

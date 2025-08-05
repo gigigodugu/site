@@ -6,13 +6,16 @@
  * Color Chance Count: 8
  */
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 /* ==========================================================================
    CSS Variables
    ========================================================================== */
 :root {
     /* Fonts */
-    --font-header: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-header: 'Libre Baskerville', serif;
+    --font-body: 'Libre Baskerville', sans-serif;
     --font-secondary: 'Libre Baskerville', serif;
     
     /* Font Weights */
@@ -41,6 +44,18 @@
     
     /* Box Shadow */
     --box-shadow-light: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+
+    --primary-font: 'Libre Baskerville', sans-serif;
+    --heading-font: 'Libre Baskerville', serif;
+    --text-color: #333;
+    --background-light: #FBFAF2;
+    --border-color: #e0ded7;
+    --dark-grey: #666;
+    --accent-color: #bb2f63;
+    --rosy-taupe: #7B6155;
+    --muted-grey: #A8A29E;
+
 }
 
 /* ==========================================================================
@@ -184,42 +199,40 @@ h2, h3, h4, h5, h6 {
 
 
 /* This is the key part: applying the texture image to all color blocks */
-.color-block-1,
-.color-block-2,
-.color-block-3,
-.color-block-4,
-.color-block-5,
-.color-block-6 {
-    background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png');
-}
+
 .color-block-1 {
-    background-color: #6a6f4c;
-    /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
+    background-color: #BCBCA7 ;
+    background-image: url('media/TILE1.png');
     /* background-image: url('/1.jpg'); */
 
 }
 
 .color-block-2 {
-    background-color: #CBB89D;
+    background-color: #85594F;
 }
 
 .color-block-3 {
-    background-color: #EDE1d2;
+    background-color: #AC6B53;
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
 .color-block-4 {
-    background-color: #806044;
+    /* background-color: #44483D; */
+    /* background-image: url('media/TILE4.jpg'); */
+    background-image: url('media/TILE4.png');
+    /* background-image: url('media/tile4.2.jpg'); */
+    /* background-image: url('media/tile4.3.jpg'); */
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
 .color-block-5 {
-    background-color: #5d2510;
+    background-color: #2F3D4C;
+    background-image: url('media/TILE5.jpg');
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
 .color-block-6 {
-    background-color: #412f26;
+    background-color: #BCCBCE;
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
@@ -741,4 +754,159 @@ footer {
 .project-info h3, .project-info p, .project-info .project-details {
     position: relative;
     z-index: 11;
+}
+
+
+
+/* Replace the footer section in your style.css with this updated version */
+
+/* ==========================================================================
+   Footer (Updated to match about.html exactly)
+   ========================================================================== */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    background-color: #fcfbf8;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    font-family: var(--primary-font);
+    min-height: 120px; /* Ensure minimum height */
+    box-sizing: border-box;
+    position: relative; /* For proper positioning of quote area */
+}
+
+.logo2 {
+    width: 30px;
+    height: auto;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Vertically align items */
+}
+
+.footer-nav a {
+    text-transform: lowercase;
+    color: var(--muted-grey);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-family: var(--primary-font);
+    line-height: 1.4; /* Ensure consistent line height */
+}
+
+.footer-nav a:hover {
+    color: var(--rosy-taupe);
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right p {
+    margin: 0;
+    color: var(--dark-grey);
+    font-family: var(--primary-font);
+    line-height: 1.4; /* Match line height */
+    font-size: 12px; /* Match the exact font size from about.html */
+}
+
+.footer-right a {
+    color: var(--muted-grey);
+}
+
+.footer-right a:hover {
+    color: var(--rosy-taupe);
+}
+
+/* Quote area - ensure it gets proper space */
+#quote-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    padding-bottom: 0;
+    background-color: inherit;
+    height: 3rem; /* Fixed height for quote area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-carousel-track {
+    display: inline-flex;
+    animation: marquee 400s linear infinite;
+    height: 100%;
+    align-items: center;
+}
+
+.quote-carousel-item {
+    padding: 0 1rem;
+    font-style: italic;
+    color: var(--dark-grey);
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--primary-font);
+    white-space: nowrap;
+    height: 100%;
+}
+
+.quote-carousel-item i {
+    color: var(--accent-color);
+    font-size: 0.9em;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Ensure footer content doesn't overlap with quote area */
+.site-footer > * {
+    margin-bottom: 3rem; /* Add space for quote area */
+}
+
+#quote-area {
+    margin-bottom: 0 !important; /* Quote area should be at the bottom */
+}
+
+/* Mobile responsive adjustments for footer */
+@media (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        min-height: 140px; /* Slightly taller on mobile */
+        padding-bottom: 4rem; /* More space for quote area */
+    }
+    
+    .footer-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-right {
+        text-align: center;
+    }
+    
+    .site-footer > * {
+        margin-bottom: 2rem; /* Adjust spacing on mobile */
+    }
 }

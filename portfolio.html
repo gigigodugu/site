@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Gigi Godugu</title>
@@ -688,7 +694,56 @@
         </div>
     </div>
 
+
+
+
+<footer class="site-footer">
+    <nav class="footer-nav">
+        <a href="index.html">
+        <img src="media/lotus.png" alt="Homepage Logo" class="logo2">
+        </a>
+
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="mailto:gigi.godugu@gmail.com">Contact</a>
+    </nav>
+    <div class="footer-right">
+        <p>© 2025 Gigi Godugu. All rights reserved.<br>
+        This website is <a href="#" style="text-decoration: underline;">sustainable</a>.</p>
+    </div>
+    <div id="quote-area">
+        <div class="quote-carousel-track"></div>
+    </div>
+</footer>
+
+
+
     <script>
+
+    const quotes = [
+        "And, when you want something, all the universe conspires in helping you to achieve it.",
+        "It's the possibility of having a dream come true that makes life interesting.",
+        "When we strive to become better than we are, everything around us becomes better too.",
+        "People learn, early in their lives, what is their reason for being.",
+        "Remember that wherever your heart is, there you will find your treasure.",
+        "Don't give in to your fears. If you do, you won't be able to talk to your heart.",
+        "Intuition is really a sudden immersion of the soul into the universal current of life.",
+        "There is only one thing that makes a dream impossible to achieve: the fear of failure.",
+        "Tell your heart that the fear of suffering is worse than the suffering itself."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const selectedQuote = quotes[randomIndex];
+
+    const quoteCarouselTrack = document.querySelector('.quote-carousel-track');
+    if (quoteCarouselTrack) {
+        const quoteHtml = `<div class="quote-carousel-item">${selectedQuote} <i class="fa fa-arrow-right"></i></div>`;
+
+        // Duplicate the quote multiple times to create the seamless loop
+        for (let i = 0; i < 50; i++) {
+            quoteCarouselTrack.innerHTML += quoteHtml;
+        }
+    }
 let currentProjectIndex = -1;
 let portfolioItems = [];
 
