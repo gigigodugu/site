@@ -201,38 +201,40 @@ h2, h3, h4, h5, h6 {
 /* This is the key part: applying the texture image to all color blocks */
 
 .color-block-1 {
-    background-color: #BCBCA7 ;
-    background-image: url('media/TILE1.png');
+    background-color: #F2E8D7 ;
+    /* background-image: url('media/TILE4.png'); */
     /* background-image: url('/1.jpg'); */
 
 }
 
 .color-block-2 {
-    background-color: #85594F;
+    background-image: url('media/TILE4.png');
 }
 
 .color-block-3 {
-    background-color: #AC6B53;
+    /* background-color: #A6B8A6; */
+    background-image: url('media/TILE4.jpg');
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
 .color-block-4 {
-    /* background-color: #44483D; */
-    /* background-image: url('media/TILE4.jpg'); */
-    background-image: url('media/TILE4.png');
+    background-color: #aab7bb;
+    /* E3C4C4, background-image: url('media/TILE4.jpg'); */
+    /* background-image: url('media/TILE1.png'); */
     /* background-image: url('media/tile4.2.jpg'); */
     /* background-image: url('media/tile4.3.jpg'); */
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
 .color-block-5 {
-    background-color: #2F3D4C;
-    background-image: url('media/TILE5.jpg');
+    background-color: #87a381;
+    /* background-image: url('media/TILE5.jpg'); */
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
 .color-block-6 {
-    background-color: #BCCBCE;
+    background-image: url('media/TILE5.jpg');
+    /* background-color: #E7B4A0; */
     /* background-image: url('https://www.transparenttextures.com/patterns/subtle-light.png'); */
 }
 
